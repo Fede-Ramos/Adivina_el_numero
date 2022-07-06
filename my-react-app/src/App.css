@@ -37,10 +37,36 @@
   }
 }
 
-/* .goButton {
+.input {
+  height: 2rem;
+  width: 10rem;
+  font-size: medium;
+}
 
-} */
+.boton1 {
+  font-size: large;
+  height: 2rem;
+  width: 6rem;
+  background-color: white;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;  
+}
 
-/* .input {
+.boton1:hover {
+  background-color: #61dafb;
+}
 
-} */
+.boton2 {
+  font-size: large;
+  height: 2rem;
+  width: 10rem;
+  background-color: white;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.boton2:hover {
+  background-color: #61dafb;
+}

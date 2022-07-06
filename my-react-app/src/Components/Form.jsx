@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from 'react';
 
-export function GameForm () {
+export function Game () {
     var min= 0;
     var max= 100;
     const initialState= Math.floor(Math.random() * max - min + 1) + min;
     const [ input, setInput ]= useState({search: ''});
-    const [ intentos, setIntentos ]= useState(0);
+    const [ intentos, setIntentos ]= useState(1);
     const [ aleatorio, setAleatorio ]= useState(initialState);
 
     const onSubmit = () => {
     var numero= parseInt(input.search);
     if(numero >= min && numero <= max) {
-        if(intentos < 5){
+        if(intentos <= 5){
             setIntentos(intentos +1);
             if(numero > aleatorio){
-                alert("El número ingresado es mayor");
+                alert("Prueba con un número menor, intento nro: " +intentos);
                 return
             }
             if(numero < aleatorio){
-                alert("El número ingresado es menor");
+                alert("Prueba con un número mayor, intento nro: " +intentos);
                 return
             }
             if(numero === aleatorio){
@@ -26,10 +26,10 @@ export function GameForm () {
                 return
             } 
         }
-         alert("Haz alcanzado el número de intentos permitidos")
+        alert("Haz alcanzado el máximo de intentos permitidos, reinicia el juego y vuelve a intentarlo");
          return
     }
-        alert("El número debe ser entre 0 y 100")
+        alert("El número ingresado debe ser un valor entre 0 y 100");
         return
     };
     
@@ -50,10 +50,10 @@ export function GameForm () {
     };
 
     useEffect(() => {
-        console.log(aleatorio)
-        console.log(intentos)
-        console.log(input)
-    })
+        //descomentar los console.log en caso de hacer un seguimiento por consola de el numero aleatorio y el contador de intentos.
+        //console.log(aleatorio)
+        //console.log(intentos)    
+    });
 
 
     return (
@@ -62,14 +62,13 @@ export function GameForm () {
             <input  type="number"
                     name="search"
                     value={input.search}
-                    required="true"
                     className="input"
                     placeholder="ingrese un valor..."
                     onChange={onChange}/>
 
-            <button onClick={onSubmit}>Buscar</button>
+            <button onClick={onSubmit} className="boton1">Adivinar</button>
 
-            <button onClick={onRestart}>Reiniciar Juego</button>
+            <button onClick={onRestart} className="boton2">Reiniciar Juego</button>
 
     </div>
     )
