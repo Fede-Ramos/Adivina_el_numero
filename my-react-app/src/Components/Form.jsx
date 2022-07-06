@@ -22,7 +22,7 @@ export function Game () {
                 return
             }
             if(numero === aleatorio){
-                alert("Felicidades, acertaste!!");
+                alert("Felicidades, acertaste!! El número aleatorio era: " +aleatorio);
                 return
             } 
         }
@@ -51,8 +51,8 @@ export function Game () {
 
     useEffect(() => {
         //descomentar los console.log en caso de hacer un seguimiento por consola de el numero aleatorio y el contador de intentos.
-        //console.log(aleatorio)
-        //console.log(intentos)    
+        //console.log(aleatorio);
+        //console.log(intentos);    
     });
 
 
