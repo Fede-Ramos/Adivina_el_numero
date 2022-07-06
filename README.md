@@ -19,4 +19,5 @@ En caso de no conocer Angular se puede plantear en otro framework de Javascript.
 #### Tecnologías utilizadas:
 - [ ] Javascript
 - [ ] React
+- [ ] HTML
 - [ ] CSS
